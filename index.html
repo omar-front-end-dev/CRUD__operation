@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+    <link rel="stylesheet" href="content/style/style.css">
+</head>
+<body>
+    <div class="crud">
+        <div class="head">
+            <h2>CRUD</h2>
+            <p>PRODUCT MANAGEMENT SYSTEM</p>
+        </div>
+        <div class="inputs">
+            <input type="text" id="title" placeholder="Title">
+            <div class="price">
+                <input onkeyup=getTotal() type="number" id="price" placeholder="Price">
+                <input onkeyup=getTotal() type="number" id="taxes" placeholder="Taxes">
+                <input onkeyup=getTotal() type="number" id="advertisements" placeholder="Advertisements">
+                <input onkeyup=getTotal() type="number" id="discount" placeholder="Discount">
+                <small id="total">0</small>
+            </div>
+            <input type="number" id="count" placeholder="Count">
+            <input type="text" id="category" placeholder="Category">
+            <button id="submit">Create</button>
+        </div>
+        <div class="outputs">
+            <div class="search-box">
+                <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="Search">
+                <div class="btn__search">
+                    <button onclick="getSearchMood(this.id)" id="search__title">Search By Title</button>
+                    <button onclick="getSearchMood(this.id)" id="search__category">Search By Category</button>
+                </div>
+            </div>
+        </div>
+        <div class="container__table">
+            <div id="delete__all">
+
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Taxes</th>
+                        <th>Advertisements</th>
+                        <th>Discount</th>
+                        <th>Total</th>
+                        <th>Category</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="content/js/app.js"></script>
+</body>
+</html>
